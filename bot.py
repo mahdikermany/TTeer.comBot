@@ -16,7 +16,7 @@ logging.basicConfig(
 
 TOKEN = "8221687298:AAFFX7UWVspNI8W-KThb_0VtDT_w2dffPIA"
 ADMIN_USER_ID = 72046362
-CHANNEL_ID = "@-1002317288060"
+CHANNEL_ID = "-1002317288060"
 
 # ================== توابع کمکی ==================
 def get_iran_time():
@@ -1348,3 +1348,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
