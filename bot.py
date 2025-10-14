@@ -14,7 +14,7 @@ logging.basicConfig(
     level=logging.INFO
 )
 
-TOKEN = "8221687298:AAFFX7UWVspNI8W-KThb_0VtDT_w2dffPIA"
+TOKEN = os.environ.get('8221687298:AAFFX7UWVspNI8W-KThb_0VtDT_w2dffPIA')
 ADMIN_USER_ID = 72046362
 CHANNEL_ID = "@TTeer_com"
 
@@ -1347,3 +1347,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
