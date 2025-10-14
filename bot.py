@@ -1304,8 +1304,11 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # ================== اجراي ربات ==================
 def main():
     print("?? ربات تتردات کام با سيستم خريد و فروش پيشرفته فعال شد...")
-    application = Application.builder().token(TOKEN).build()
-    
+   application = (
+        Application.builder()
+        .token(TOKEN)
+        .build()
+   )
     # تنظيم JobQueue براي ارسال خودکار به کانال
     job_queue = application.job_queue
     if job_queue:
@@ -1351,6 +1354,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
