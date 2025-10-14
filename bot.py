@@ -14,9 +14,11 @@ logging.basicConfig(
     level=logging.INFO
 )
 
-TOKEN = os.environ.get('8221687298:AAFFX7UWVspNI8W-KThb_0VtDT_w2dffPIA')
+Key: TELEGRAM_TOKEN
+Value: 8221687298:AAFFX7UWVspNI8W-KThb_0VtDT_w2dffPIA
+TOKEN = "8221687298:AAFFX7UWVspNI8W-KThb_0VtDT_w2dffPIA"
 ADMIN_USER_ID = 72046362
-CHANNEL_ID = "@TTeer_com"
+CHANNEL_ID = "-1002317288060"
 
 # ================== توابع کمکي ==================
 def get_iran_time():
@@ -1347,4 +1349,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
