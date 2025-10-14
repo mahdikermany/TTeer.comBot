@@ -1,16 +1,3 @@
-# راه حل برای پایتون ۳.۱۳ - جایگزینی imghdr (اضافه شده توسط دستیار)
-import sys
-if sys.version_info >= (3, 13):
-    import types
-    class ImghdrReplacement:
-        @staticmethod
-        def what(file_path, h=None):
-            return None
-    sys.modules['imghdr'] = ImghdrReplacement()
-else:
-    import imghdr
-# پایان بخش اضافه شده
-
 from telegram import Update, ReplyKeyboardMarkup, KeyboardButton
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters, JobQueue
 import requests
