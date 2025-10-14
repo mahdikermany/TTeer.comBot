@@ -1302,7 +1302,13 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("? دستور نامعتبر\nلطفاً از دکمه‌هاي زير استفاده کنيد:", reply_markup=main_menu_keyboard())
 
 # ================== اجراي ربات ==================
-dif __name__ == "__main__":
-    print("🚀 شروع ربات...")
-    main()
+if __name__ == "__main__":
+    print("🚀 شروع ربات تلگرام...")
+    try:
+        main()
+    except Exception as e:
+        print(f"❌ خطا: {e}")
+        import traceback
+        traceback.print_exc()
  
+
