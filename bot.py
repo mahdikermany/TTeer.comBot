@@ -14,10 +14,11 @@ logging.basicConfig(
     level=logging.INFO
 )
 
-TOKEN = os.environ.get('8221687298:AAFFX7UWVspNI8W-KThb_0VtDT_w2dffPIA')
+TOKEN = os.environ.get('TELEGRAM_TOKEN')
 if not TOKEN:
     print("❌ توکن پیدا نشد! لطفا در Render تنظیم کن")
     exit(1)
+
 ADMIN_USER_ID = 72046362
 CHANNEL_ID = "-1002317288060"
 
@@ -1350,6 +1351,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
