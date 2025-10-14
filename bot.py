@@ -1302,49 +1302,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("? دستور نامعتبر\nلطفاً از دکمه‌هاي زير استفاده کنيد:", reply_markup=main_menu_keyboard())
 
 # ================== اجراي ربات ==================
-def main():
-    print("?? ربات تتردات کام با سيستم خريد و فروش پيشرفته فعال شد...")
-    application = Application.builder().token(TOKEN).build()
-    
-    # تنظيم JobQueue براي ارسال خودکار به کانال
-    job_queue = application.job_queue
-    if job_queue:
-        # اطمينان از وجود کليد channel_interval
-        if "channel_interval" not in ADMIN_SETTINGS:
-            ADMIN_SETTINGS["channel_interval"] = 30
-            save_admin_settings(ADMIN_SETTINGS)
-            
-        interval_seconds = ADMIN_SETTINGS["channel_interval"] * 60
-        job_queue.run_repeating(
-            send_channel_price,
-            interval=interval_seconds,
-            first=10,  # 10 ثانيه بعد از راه‌اندازي
-            name="channel_price_job"
-        )
-        print(f"? سيستم ارسال خودکار به کانال فعال شد - فاصله: {ADMIN_SETTINGS['channel_interval']} دقيقه")
-    
-    # اضافه کردن هندلرها
-    application.add_handler(CommandHandler("start", start_command))
-    application.add_handler(CommandHandler("price", price_command))
-    application.add_handler(CommandHandler("help", help_command))
-    application.add_handler(CommandHandler("admin", admin_help_command))
-    application.add_handler(CommandHandler("togglenotifications", toggle_notifications_command))
-    application.add_handler(CommandHandler("setwallet", set_wallet_command))
-    application.add_handler(CommandHandler("wallets", show_wallets_command))
-    application.add_handler(CommandHandler("stats", stats_command))
-    application.add_handler(CommandHandler("broadcast", broadcast_command))
-    application.add_handler(CommandHandler("addcode", add_code_command))
-    application.add_handler(CommandHandler("removecode", remove_code_command))
-    application.add_handler(CommandHandler("listcodes", list_codes_command))
-    application.add_handler(CommandHandler("togglecode", toggle_code_command))
-    
-    # دستورات جديد مديريت کانال
-    application.add_handler(CommandHandler("setinterval", set_interval_command))
-    application.add_handler(CommandHandler("sendnow", send_now_command))
-    application.add_handler(CommandHandler("channelstatus", channel_status_command))
-    
-    application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
-    
-    print("? ربات آماده اجرا است...")
-    print(f"?? سيستم ارسال خودکار قيمت به کانال هر {ADMIN_SETTINGS['channel_interval']} دقيقه فعال است")
-    application.run_polling()
+dif __name__ == "__main__":
+    print("🚀 شروع ربات...")
+    main()
+ 
