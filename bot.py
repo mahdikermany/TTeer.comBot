@@ -1304,12 +1304,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # ================== اجراي ربات ==================
 def main():
     print("?? ربات تتردات کام با سيستم خريد و فروش پيشرفته فعال شد...")
+    application = Application.builder().token(TOKEN).build()
     
-    application = (
-        Application.builder()
-        .token(TOKEN)
-        .build()
-    )
     # تنظيم JobQueue براي ارسال خودکار به کانال
     job_queue = application.job_queue
     if job_queue:
@@ -1352,12 +1348,3 @@ def main():
     print("? ربات آماده اجرا است...")
     print(f"?? سيستم ارسال خودکار قيمت به کانال هر {ADMIN_SETTINGS['channel_interval']} دقيقه فعال است")
     application.run_polling()
-
-if __name__ == "__main__":
-    main()
-
-
-
-
-
-
