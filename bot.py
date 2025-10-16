@@ -35,7 +35,7 @@ ADMIN_SETTINGS_FILE = "admin_settings.json"
 def load_admin_settings():
     default_settings = {
         "order_notifications": True,
-        "channel_interval": 30  # مدت زمان بين ارسال پيام‌ها به کانال (دقيقه)
+        "channel_interval": 12  # مدت زمان بين ارسال پيام‌ها به کانال (دقيقه)
     }
     
     if os.path.exists(ADMIN_SETTINGS_FILE):
@@ -175,7 +175,7 @@ async def send_channel_price(context: ContextTypes.DEFAULT_TYPE):
 
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 📅 {persian_date_display}
-🕓 {persian_time}
+⏰ {persian_time}
 
 🤖 [قيمت الان چند؟](https://t.me/TTeer_com_bot)"""
         
@@ -1307,7 +1307,7 @@ def main():
     if job_queue:
         # اطمينان از وجود کليد channel_interval
         if "channel_interval" not in ADMIN_SETTINGS:
-            ADMIN_SETTINGS["channel_interval"] = 30
+            ADMIN_SETTINGS["channel_interval"] = 12
             save_admin_settings(ADMIN_SETTINGS)
             
         interval_seconds = ADMIN_SETTINGS["channel_interval"] * 60
